@@ -1,0 +1,27 @@
+{
+  "name": "fake-api",
+  "version": "1.0.0",
+  "description": "JSON Server API for Container-Presenter Pattern Tutorial",
+  "main": "server.js",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3001 --middlewares ./middlewares.js",
+    "dev": "json-server --watch db.json --port 3001 --middlewares ./middlewares.js --delay 500",
+    "reset": "cp db-backup.json db.json && echo 'Database reset to initial state'"
+    
+  },
+  "keywords": [
+    "json-server",
+    "react",
+    "api",
+    "mock",
+    "tutorial"
+  ],
+  "author": "React Tutorial",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
+}
