@@ -226,47 +226,9 @@ npm run reset
 npm install
 ```
 
-## Using with React Examples
-
-### Container-Presenter Pattern Example
-```javascript
-// In your React app, use these endpoints:
-const API_BASE = 'http://localhost:3001/api';
-
-// UserProfileContainer.jsx
-const fetchUserData = async () => {
-  const response = await axios.get(`${API_BASE}/users/${userId}`);
-  return response.data;
-};
-
-const fetchUserPosts = async () => {
-  const response = await axios.get(`${API_BASE}/users/${userId}/posts`);
-  return response.data;
-};
-
-const updateUser = async (userData) => {
-  const response = await axios.put(`${API_BASE}/users/${userId}`, userData);
-  return response.data;
-};
-```
-
-### Challenge Example (ProductListContainer)
-```javascript
-// ProductListContainer.jsx
-const fetchProducts = async (categoryId, sortBy, filterBy) => {
-  const params = new URLSearchParams();
-  if (categoryId !== 'all') params.append('category', categoryId);
-  if (sortBy) params.append('sort', sortBy);
-  if (filterBy !== 'all') params.append('filter', filterBy);
-  
-  const response = await axios.get(`${API_BASE}/products?${params}`);
-  return response.data;
-};
-```
-
 ## Project Structure
 
-```
+```bash
 container-presenter-api-server/
 ├── package.json          # Dependencies and scripts
 ├── db.json              # Main database file
@@ -278,6 +240,7 @@ container-presenter-api-server/
 ## Sample API Responses
 
 ### User Profile Response
+
 ```json
 {
   "id": "1",
@@ -294,6 +257,7 @@ container-presenter-api-server/
 ```
 
 ### Posts Response
+
 ```json
 [
   {
@@ -314,6 +278,7 @@ container-presenter-api-server/
 ```
 
 ### Products Response
+
 ```json
 [
   {
@@ -335,22 +300,5 @@ container-presenter-api-server/
   }
 ]
 ```
-
-## Tips for Students
-
-1. **Start Simple**: Begin with the basic user profile endpoints before moving to the products challenge
-2. **Use Browser Network Tab**: Monitor API calls and responses in Chrome DevTools
-3. **Test Error Scenarios**: Try invalid user IDs to see how your error handling works
-4. **Experiment with Filters**: Use the products endpoint with different query parameters
-5. **Check Response Times**: The dev mode includes realistic delays to simulate real API behavior
-
-## Next Steps
-
-After setting up the server:
-
-1. **Create your React app**: `npx create-react-app container-presenter-demo`
-2. **Install axios**: `npm install axios`
-3. **Start building**: Follow the tutorial video examples
-4. **Test your components**: Use the provided endpoints
 
 Happy coding! 🚀
